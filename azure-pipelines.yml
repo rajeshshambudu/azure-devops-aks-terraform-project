@@ -1,0 +1,25 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  imageName: 'devops-app'
+
+steps:
+- task: Docker@2
+  inputs:
+    command: buildAndPush
+    repository: $(imageName)
+    dockerfile: app/Dockerfile
+    containerRegistry: 'ACR-Service-Connection'
+    tags: latest
+
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'Kubernetes Service Connection'
+    kubernetesServiceEndpoint: 'AKS-Service-Connection'
+    command: apply
+    useConfigurationFile: true
+    configuration: kubernetes/deployment.yaml
