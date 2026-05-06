@@ -11,7 +11,7 @@ End-to-end CI/CD pipeline deploying containerized app to AKS.
 - Azure Key Vault
 
 ## Architecture
-
+<img width="1536" height="1024" alt="azure-devops-aks-architecture-rajesh" src="https://github.com/user-attachments/assets/eed4697d-e941-4328-818c-f29f3f8a9786" />
 
 ## Features
 - CI/CD automation
