@@ -11,27 +11,7 @@ End-to-end CI/CD pipeline deploying containerized app to AKS.
 - Azure Key Vault
 
 ## Architecture
-[Developer]
-     ↓
-[Git Repo]
-     ↓
-┌────────────────────────────┐
-│ Azure DevOps Pipeline      │
-│  - Build                  │
-│  - Docker                 │
-│  - Key Vault (Secrets)    │
-└────────────────────────────┘
-     ↓
-[ACR]
-     ↓
-┌────────────────────────────┐
-│ AKS Cluster                │
-│  Deployment (2 replicas)   │
-│  Pods                     │
-│  LoadBalancer Service     │
-└────────────────────────────┘
-     ↓
-[End User]
+
 
 ## Features
 - CI/CD automation
